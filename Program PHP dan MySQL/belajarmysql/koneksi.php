@@ -2,7 +2,7 @@
 $server = "localhost";
 $user 	= "root";
 $pass	= "";
-$dbname	= "belajar_mysql";
+$dbname	= "belajarmysql";
 
 $koneksi = mysqli_connect($server,$user,$pass,$dbname);
 

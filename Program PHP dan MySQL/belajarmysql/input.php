@@ -1,23 +1,23 @@
-<?php 
+<?php
 include('koneksi.php');
 
-if(isset($_POST['jarak'])){
+if (isset($_POST['suhu']) && isset($_POST['kelembaban'])) {
 
-	$jarak = $_POST['jarak'];
+	$suhu = $_POST['suhu'];
+	$kelembaban = $_POST['kelembaban'];
 
 	//Tanggal dan Waktu
 	$tanggal = date("Y-m-d");
 	$waktu = date("H:i:s");
 
-	$sql = "INSERT INTO data VALUES(NULL,'$tanggal','$waktu',$jarak)";
-	$input = mysqli_query($koneksi,$sql);
+	$sql = "INSERT INTO data VALUES(NULL,'$tanggal','$waktu',$suhu,$kelembaban)";
+	$input = mysqli_query($koneksi, $sql);
 
-	if($input){
-		echo "Berhasil Input Data: " . $jarak;
-	}else{
+	if ($input) {
+		echo "2000";
+	} else {
 		echo "Gagal Input" . mysqli_query_error($koneksi);
 	}
-
-}else{
+} else {
 	echo "no data";
 }
